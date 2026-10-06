@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c06iv77gd7532"]
+
+[ext_resource type="Script" uid="uid://8v8ivlbc70vt" path="res://scenes/campainSelection/CampaignSelection.cs" id="1_lkhnv"]
+[ext_resource type="Script" uid="uid://cgvx11aipfquy" path="res://scenes/campainSelection/ItemList.cs" id="2_h1f0v"]
+
+[node name="campaign_selection" type="Node2D" unique_id=855822867]
+script = ExtResource("1_lkhnv")
+
+[node name="campaignList" type="ItemList" parent="." unique_id=1177736255]
+offset_left = 297.0
+offset_top = 212.0
+offset_right = 659.0
+offset_bottom = 361.0
+max_columns = 2
+script = ExtResource("2_h1f0v")
+
+[node name="campaignListLabel" type="Label" parent="." unique_id=2089334919]
+offset_left = 406.0
+offset_top = 157.0
+offset_right = 558.0
+offset_bottom = 180.0
+text = "Campaign Selection"
+
+[node name="campaignListButton" type="Button" parent="." unique_id=956384133]
+offset_left = 460.0
+offset_top = 397.0
+offset_right = 514.0
+offset_bottom = 428.0
+text = "Select
+"
+
+[connection signal="item_selected" from="campaignList" to="." method="_on_campaign_list_item_selected"]
+[connection signal="pressed" from="campaignListButton" to="." method="_on_campain_list_button_pressed"]

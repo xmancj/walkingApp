@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="WalkingApp"
-run/main_scene="uid://6mrxviweyr3d"
+run/main_scene="uid://c06iv77gd7532"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
 

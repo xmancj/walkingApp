@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://qjhk8qa7siui"]
+
+[ext_resource type="Script" uid="uid://caba1o2ruaxq3" path="res://scenes/Main.cs" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://6mrxviweyr3d" path="res://scenes/walking/walking.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://c06iv77gd7532" path="res://scenes/campainSelection/campaign_selection.tscn" id="3_tbgi4"]
+
+[node name="Main" type="Node" unique_id=1418736857]
+script = ExtResource("1_sugp2")
+
+[node name="Walking" parent="." unique_id=783668422 instance=ExtResource("2_jyhfs")]
+
+[node name="campaign_selection" parent="." unique_id=855822867 instance=ExtResource("3_tbgi4")]
