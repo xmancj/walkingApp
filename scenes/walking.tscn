@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://6mrxviweyr3d"]
+
+[ext_resource type="Script" uid="uid://s0ss5y5y5qtn" path="res://scenes/Walking.cs" id="1_4oqlq"]
+[ext_resource type="Script" uid="uid://buriq7h868wwq" path="res://scenes/StepsRemaining.cs" id="2_2hl8a"]
+[ext_resource type="Script" uid="uid://bokx1bpi4ra4k" path="res://scenes/StepsWalked.cs" id="2_jclca"]
+
+[node name="Walking" type="Node2D" unique_id=783668422]
+script = ExtResource("1_4oqlq")
+
+[node name="addStepsLabel" type="RichTextLabel" parent="." unique_id=242802590]
+offset_left = 346.0
+offset_top = 296.0
+offset_right = 443.0
+offset_bottom = 327.0
+text = "Add Steps"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="addStepsInput" type="SpinBox" parent="." unique_id=1820852649]
+offset_left = 478.0
+offset_top = 296.0
+offset_right = 564.5
+offset_bottom = 327.0
+max_value = 20000.0
+custom_arrow_step = 100.0
+
+[node name="addStepsButton" type="Button" parent="." unique_id=2097173721]
+offset_left = 590.0
+offset_top = 296.0
+offset_right = 653.0
+offset_bottom = 327.0
+text = "Submit"
+
+[node name="stepsRemainingLabel" type="RichTextLabel" parent="." unique_id=832839121]
+offset_left = 328.0
+offset_top = 154.0
+offset_right = 486.0
+offset_bottom = 180.0
+text = "Steps Remaining"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stepsRemaining" type="RichTextLabel" parent="." unique_id=1935938794]
+offset_left = 572.0
+offset_top = 154.0
+offset_right = 664.0
+offset_bottom = 180.0
+text = "10000"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_2hl8a")
+
+[node name="stepsWalkedLabel" type="RichTextLabel" parent="." unique_id=1543739161]
+offset_left = 328.0
+offset_top = 198.0
+offset_right = 478.0
+offset_bottom = 222.0
+text = "Steps Walked"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stepsWalked" type="RichTextLabel" parent="." unique_id=623153668 groups=["persist"]]
+offset_left = 572.0
+offset_top = 198.0
+offset_right = 668.0
+offset_bottom = 222.0
+text = "0"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_jclca")
+
+[connection signal="value_changed" from="addStepsInput" to="stepsWalked" method="_on_add_steps_input_value_changed"]
+[connection signal="pressed" from="addStepsButton" to="stepsWalked" method="_on_add_steps_button_pressed"]
+[connection signal="StepsWalkedUpdated" from="stepsWalked" to="stepsRemaining" method="_on_steps_walked_steps_walked_updated"]
